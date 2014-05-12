@@ -1,15 +1,12 @@
 package net.lospi.sphinx;
 
 import com.thoughtworks.qdox.model.JavaClass;
-import net.lospi.sphinx.JavaClassParser;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.*;
-import java.net.URISyntaxException;
 import java.util.List;
 
-import static net.lospi.sphinx.Utils.fromFile;
+import static net.lospi.sphinx.Utils.fromResource;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class JavaClassParserTest {
@@ -17,7 +14,7 @@ public class JavaClassParserTest {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        source = fromFile("sample-class.txt");
+        source = fromResource("sample-class.txt");
     }
 
     @Test

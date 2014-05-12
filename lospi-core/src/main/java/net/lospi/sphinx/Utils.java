@@ -16,7 +16,16 @@ public class Utils {
     }
 
     public static String fromFile(String fileName) throws IOException, URISyntaxException {
+        InputStream is = new FileInputStream(fileName);
+        return streamToString(fileName, is);
+    }
+
+    public static String fromResource(String fileName) throws IOException, URISyntaxException {
         InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
+        return streamToString(fileName, is);
+    }
+
+    private static String streamToString(String fileName, InputStream is) throws FileNotFoundException {
         if(is==null){
             throw new FileNotFoundException("Could not find file " + fileName);
         }

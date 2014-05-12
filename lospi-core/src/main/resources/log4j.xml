@@ -9,7 +9,7 @@
             <param name="ConversionPattern" value="%m%n"/>
         </layout>
     </appender>
-
+<!--
     <appender name="file" class="org.apache.log4j.FileAppender">
         <param name="File" value="app.log"/>
         <param name="Threshold" value="debug"/>
@@ -17,10 +17,10 @@
             <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
         </layout>
     </appender>
-
+-->
     <root>
         <priority value="debug"/>
         <appender-ref ref="console"/>
-        <appender-ref ref="file"/>
+        <!--<appender-ref ref="file"/>-->
     </root>
 </log4j:configuration>

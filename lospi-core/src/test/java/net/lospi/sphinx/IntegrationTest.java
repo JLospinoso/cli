@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static net.lospi.sphinx.Utils.fromFile;
+import static net.lospi.sphinx.Utils.fromResource;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class IntegrationTest {
@@ -14,7 +14,7 @@ public class IntegrationTest {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        source = fromFile("sample-class.txt");
+        source = fromResource("sample-class.txt");
     }
 
     @Test
