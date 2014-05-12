@@ -4,6 +4,16 @@ import java.io.*;
 import java.net.URISyntaxException;
 
 public class Utils {
+    public static void toFile(String fileName, String content) throws IOException {
+        File file = new File("/users/mkyong/filename.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(content);
+        bw.close();
+    }
 
     public static String fromFile(String fileName) throws IOException, URISyntaxException {
         InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
