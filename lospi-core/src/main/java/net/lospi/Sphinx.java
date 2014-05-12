@@ -19,7 +19,7 @@ public class Sphinx {
                 logger.info("Current time: " + new Date(System.currentTimeMillis()));
             } else {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp("Sphinx", options);
+                formatter.printHelp("sphx", options);
             }
         } catch (ParseException e) {
             logger.error(e.getMessage());
