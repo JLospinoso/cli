@@ -21,8 +21,8 @@ public class TestClassGenerator {
         mocks = new HashSet<String>();
         imports.add("import org.testng.annotations.BeforeMethod;\n");
         imports.add("import org.testng.annotations.Test;\n");
-        imports.add("import static org.fest.assertions.api.Assertions.assertThat;\n");
-        imports.add("import static org.mockito.Mockito.mock;\n");
+        imports.add("import static org.fest.assertions.api.Assertions.*;\n");
+        imports.add("import static org.mockito.Mockito.*;\n");
 
         List<JavaConstructor> constructors = javaClass.getConstructors();
         if(constructors.size() > 1) {
@@ -56,7 +56,7 @@ public class TestClassGenerator {
             StringBuilder newTest = new StringBuilder("\t@Test\n")
                 .append("\tpublic void ")
                 .append(javaMethod.getName())
-                .append(" {\n")
+                .append("() {\n")
                 .append(constructionStatement)
                 .append("\t\t")
                 .append(javaMethod.getReturnType().getValue())
