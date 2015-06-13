@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 
 public class Utils {
     public static void toFile(String fileName, String content) throws IOException {
-        File file = new File("/users/mkyong/filename.txt");
+        File file = new File(fileName);
         if (!file.exists()) {
             file.createNewFile();
         }
